@@ -3,12 +3,17 @@ import AppHeader from './components/AppHeader.vue';
 
 export default {
   name: 'Boolflix',
-  components: { AppHeader }
+  components: { AppHeader },
+  methods: {
+    readValue(textApi) {
+      console.log(textApi);
+    }
+  }
 }
 </script>
 
 <template>
-  <AppHeader />
+  <AppHeader @serch-text="readValue" />
 </template>
 
 <style lang="scss">

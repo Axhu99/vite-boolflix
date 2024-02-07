@@ -1,16 +1,16 @@
 <script>
+import SearchForm from './SearchForm.vue'
 export default {
-    name: 'AppHeader'
+    name: 'AppHeader',
+    components: { SearchForm },
+    emits: ['serchText']
 }
 </script>
 
 <template>
     <header class="d-flex justify-content-around align-items-center">
         <a href="#">bootflix</a>
-        <form action="">
-            <input type="text">
-            <button>SEARCH</button>
-        </form>
+        <SearchForm placeholder="Cerca il titolo" button-text="CERCA" @submit-form="$emit('serchText', $event)" />
     </header>
 </template>
 
