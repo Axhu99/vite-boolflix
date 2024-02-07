@@ -1,13 +1,11 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
+import axios from 'axios';
 
 export default {
   name: 'Boolflix',
   components: { AppHeader },
   methods: {
-    readValue(textApi) {
-      console.log(textApi);
-    }
   }
 }
 </script>
