@@ -1,17 +1,21 @@
 <script>
+import { store } from './data/store.js';
 import AppHeader from './components/AppHeader.vue';
-import axios from 'axios';
+import AppMain from './components/AppMain.vue';
+
 
 export default {
   name: 'Boolflix',
-  components: { AppHeader },
-  methods: {
-  }
+  data: () => ({
+    store
+  }),
+  components: { AppHeader, AppMain },
 }
 </script>
 
 <template>
-  <AppHeader @serch-text="readValue" />
+  <AppHeader />
+  <AppMain />
 </template>
 
 <style lang="scss">
