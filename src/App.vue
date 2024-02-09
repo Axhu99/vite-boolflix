@@ -17,7 +17,7 @@ export default {
     fetchMovies() {
       if (!store.filter) {
         store.movies = [];
-        return
+        return;
       }
       const { baseUri, language, apiKey } = api;
 
