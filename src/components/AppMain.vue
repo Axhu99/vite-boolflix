@@ -11,14 +11,20 @@ export default {
 <template>
     <main>
         <div class="container">
-            <section class="movies">
+            <section>
                 <h2>movies</h2>
-                <CoverTitle v-for="movie in   store.movies  " :key="movie.id" v-bind="movie" />
+                <div class="row row-cols-4 g-3">
+                    <CoverTitle v-for="movie in   store.movies  " :key="movie.id" v-bind="movie" class="col" />
+                </div>
             </section>
-            <section class="series">
+            <section>
                 <h2>series</h2>
-                <CoverTitle v-for="serie in   store.series  " :key="serie.id" v-bind="serie" />
+                <div class="row row-cols-4 g-3">
+                    <CoverTitle v-for="serie in   store.series  " :key="serie.id" v-bind="serie" class="col" />
+                </div>
             </section>
         </div>
     </main>
 </template>
+
+<style></style>
