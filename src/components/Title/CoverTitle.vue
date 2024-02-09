@@ -29,7 +29,7 @@ export default {
 <template>
     <div>
         <div class="basecard">
-            <img :src="posterSrc" class="img-fluid d-block imgCard">
+            <img :src="posterSrc" class="imgCard">
             <div class="d-flex align-items-center">
                 <ul class="p-0 m-0 h-100 cardtext">
                     <li>{{ title }}</li>
@@ -65,6 +65,7 @@ li {
     color: #fff;
     text-align: center;
 
+    /* TODO sistemare il pezzo che esco in piu */
     background-color: rgba(0, 0, 0, 0.8);
 
     position: absolute;

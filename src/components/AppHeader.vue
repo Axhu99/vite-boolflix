@@ -18,7 +18,7 @@ export default {
 <template>
     <header>
         <div class="container d-flex justify-content-between">
-            <a class="titleWeb" href="#">bootflix</a>
+            <a class="titleWeb" href="#">boolflix</a>
             <SearchForm @submit-form="$emit('onSubmitEvent')" @term-change="setTitleFilter" placeholder="Cerca il titolo"
                 button-text="CERCA" />
         </div>
