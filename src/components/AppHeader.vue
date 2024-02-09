@@ -16,10 +16,12 @@ export default {
 </script>
 
 <template>
-    <header class="d-flex justify-content-around align-items-center">
-        <a href="#">bootflix</a>
-        <SearchForm @submit-form="$emit('onSubmitEvent')" @term-change="setTitleFilter" placeholder="Cerca il titolo"
-            button-text="CERCA" />
+    <header>
+        <div class="container d-flex justify-content-between">
+            <a class="titleWeb" href="#">bootflix</a>
+            <SearchForm @submit-form="$emit('onSubmitEvent')" @term-change="setTitleFilter" placeholder="Cerca il titolo"
+                button-text="CERCA" />
+        </div>
     </header>
 </template>
 
@@ -27,9 +29,12 @@ export default {
 header {
     background-color: #000;
     height: 80px;
+
+    display: flex;
+    align-items: center;
 }
 
-a {
+.titleWeb {
     font-size: 2rem;
     text-transform: uppercase;
     color: red;

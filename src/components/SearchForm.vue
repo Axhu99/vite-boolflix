@@ -14,10 +14,10 @@ export default {
 
 <template>
     <!-- TODO quando si invia il form RESET dell'input -->
-    <form @submit.prevent="$emit('submit-form')" class="d-flex">
+    <form @submit.prevent="$emit('submit-form')" class="d-flex gap-2">
         <input type="text" class="form-control" v-model.trim="searchTerm" @keyup="$emit('term-change', searchTerm)"
             :placeholder="placeholder || 'Cerca...'">
-        <button>{{ buttonText || 'CERCA' }}</button>
+        <button type="button" class="btn btn-danger">{{ buttonText || 'CERCA' }}</button>
     </form>
 </template>
 

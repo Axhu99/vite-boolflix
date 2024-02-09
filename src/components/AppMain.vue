@@ -1,5 +1,4 @@
 <script>
-import { api } from '../data/index';
 import { store } from '../data/store.js';
 import CoverTitle from './Title/CoverTitle.vue';
 export default {

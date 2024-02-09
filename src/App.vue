@@ -36,7 +36,6 @@ export default {
 
       axios.get(`${baseUri}/${endpoint}`, { params })
         .then((res) => {
-          //TODO map per predere solo i dati che mi servono 
           store[collection] = res.data.results.map(mapProductions)
         })
         .catch((err) => {
