@@ -30,7 +30,7 @@ export default {
     <div>
         <img :src="posterSrc" class="img-fluid d-block imgCard">
         <div>
-            <ul class="p-0 m-0 d-none h-100">
+            <ul class="p-0 m-0 h-100">
                 <li>{{ title }}</li>
                 <li>{{ originalTitle }}</li>
                 <li>{{ voteAverage }}</li>
@@ -49,7 +49,7 @@ li {
 
 .imgCard {
     width: 300px;
-    height: 450px;
+    height: 400px;
     object-fit: cover;
 }
 </style>
