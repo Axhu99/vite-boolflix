@@ -14,11 +14,18 @@ export default {
   }),
   components: { AppHeader, AppMain },
   methods: {
-    fetchMovies() {
+    fetchProductions() {
       if (!store.filter) {
         store.movies = [];
+        store.series = [];
         return;
       }
+
+      this.fetchApi('search/movie', 'movies')
+      this.fetchApi('search/tv', 'series')
+    },
+
+    fetchApi(endpoint, collection) {
       const { baseUri, language, apiKey } = api;
 
       const params = {
@@ -27,10 +34,10 @@ export default {
         language
       }
 
-      axios.get(`${baseUri}/search/movie`, { params })
+      axios.get(`${baseUri}/${endpoint}`, { params })
         .then((res) => {
           //TODO map per predere solo i dati che mi servono 
-          store.movies = res.data.results
+          store[collection] = res.data.results
         })
         .catch((err) => {
           console.log(err)
@@ -41,7 +48,7 @@ export default {
 </script>
 
 <template>
-  <AppHeader @onSubmitEvent="fetchMovies" />
+  <AppHeader @onSubmitEvent="fetchProductions" />
   <AppMain />
 </template>
 
