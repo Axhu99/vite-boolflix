@@ -1,5 +1,5 @@
 <script>
-import { api } from './data/index';
+import { api, mapProductions } from './data/index';
 import { store } from './data/store.js';
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
@@ -37,7 +37,7 @@ export default {
       axios.get(`${baseUri}/${endpoint}`, { params })
         .then((res) => {
           //TODO map per predere solo i dati che mi servono 
-          store[collection] = res.data.results
+          store[collection] = res.data.results.map(mapProductions)
         })
         .catch((err) => {
           console.log(err)

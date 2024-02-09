@@ -14,11 +14,11 @@ export default {
         <div class="container">
             <section class="movies">
                 <h2>movies</h2>
-                <CoverTitle v-for="movie in   store.movies  " :key="movie.id" :productionMovie="movie" />
+                <CoverTitle v-for="movie in   store.movies  " :key="movie.id" v-bind="movie" />
             </section>
             <section class="series">
                 <h2>series</h2>
-                <CoverTitle v-for="serie in   store.series  " :key="serie.id" :productionMovie="serie" />
+                <CoverTitle v-for="serie in   store.series  " :key="serie.id" v-bind="serie" />
             </section>
         </div>
     </main>
