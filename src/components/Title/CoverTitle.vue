@@ -28,16 +28,18 @@ export default {
 
 <template>
     <div>
-        <img :src="posterSrc" class="img-fluid d-block imgCard">
-        <div>
-            <ul class="p-0 m-0 h-100">
-                <li>{{ title }}</li>
-                <li>{{ originalTitle }}</li>
-                <li>{{ voteAverage }}</li>
-                <li>
-                    <FontAwesomeIcon v-for="n in 5" :key="n" :icon="[iconStyle(n), 'star']" />
-                </li>
-            </ul>
+        <div class="basecard">
+            <img :src="posterSrc" class="img-fluid d-block imgCard">
+            <div class="d-flex align-items-center">
+                <ul class="p-0 m-0 h-100 cardtext">
+                    <li>{{ title }}</li>
+                    <li>{{ originalTitle }}</li>
+                    <li>{{ voteAverage }}</li>
+                    <li>
+                        <FontAwesomeIcon v-for="n in 5" :key="n" :icon="[iconStyle(n), 'star']" />
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </template>
@@ -48,8 +50,35 @@ li {
 }
 
 .imgCard {
+    display: block;
     width: 300px;
     height: 400px;
     object-fit: cover;
+}
+
+.basecard {
+    position: relative;
+}
+
+.cardtext {
+    display: none;
+    color: #fff;
+    text-align: center;
+
+    background-color: rgba(0, 0, 0, 0.8);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.basecard:hover .cardtext {
+    display: flex;
 }
 </style>
